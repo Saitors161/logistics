@@ -1,0 +1,25 @@
+logistics:
+  MaxCarForDriver: 3
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+     hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format_sql: true
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+    url: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;INIT=CREATE SCHEMA logistics_app;
+    user: sa
+    password: sa
+  test:
+    database:
+      replace: none

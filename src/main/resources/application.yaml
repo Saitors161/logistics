@@ -1,0 +1,17 @@
+logistics:
+  MaxCarForDriver: 3
+server:
+  port: 8012
+spring:
+  datasource:
+    url: jdbc:postgresql://db:5432/logistics_database?currentSchema=logistics_app
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+    url: jdbc:postgresql://db:5432/logistics_database?currentSchema=logistics_app
+    user: postgres
+    password: 1234
+  jpa:
+    show-sql: true
